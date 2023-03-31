@@ -289,21 +289,21 @@ contract LiquidationOperator is IUniswapV2Callee {
         // 2.0. security checks and initializing variables
 
         assert(msg.sender == address(uniswapV2Pair_WETH_USDC));
-        (
-            uint256 reserve_WETH_Pool1,
-            uint256 reserve_USDT_Pool1,
+        // (
+        //     uint256 reserve_WETH_Pool1,
+        //     uint256 reserve_USDT_Pool1,
 
-        ) = uniswapV2Pair_WETH_USDT.getReserves(); // Pool1
-        (
-            uint256 reserve_WBTC_Pool2,
-            uint256 reserve_WETH_Pool2,
+        // ) = uniswapV2Pair_WETH_USDT.getReserves(); // Pool1
+        // (
+        //     uint256 reserve_WBTC_Pool2,
+        //     uint256 reserve_WETH_Pool2,
 
-        ) = uniswapV2Pair_WBTC_WETH.getReserves(); // Pool2
-        (
-            uint256 reserve_WBTC_Pool3,
-            uint256 reserve_USDT_Pool3,
+        // ) = uniswapV2Pair_WBTC_WETH.getReserves(); // Pool2
+        // (
+        //     uint256 reserve_WBTC_Pool3,
+        //     uint256 reserve_USDT_Pool3,
 
-        ) = uniswapV2Pair_WBTC_USDT.getReserves(); // Pool3
+        // ) = uniswapV2Pair_WBTC_USDT.getReserves(); // Pool3
 
         (
             uint256 reserve_USDC_Pool4,
@@ -316,19 +316,19 @@ contract LiquidationOperator is IUniswapV2Callee {
 
         // ) = uniswapV2Pair_USDC_WETH.getReserves(); // Pool5
 
-        console.log(
-            "uniswapV2Pair(%s): WBTC <> USDT",
-            address(uniswapV2Pair_WBTC_USDT)
-        );
-        console.log("reserve WBTC: %s", reserve_WBTC_Pool3);
-        console.log("reserve USDT: %s", reserve_USDT_Pool3);
+        // console.log(
+        //     "uniswapV2Pair(%s): WBTC <> USDT",
+        //     address(uniswapV2Pair_WBTC_USDT)
+        // );
+        // console.log("reserve WBTC: %s", reserve_WBTC_Pool3);
+        // console.log("reserve USDT: %s", reserve_USDT_Pool3);
 
-        console.log(
-            "uniswapV2Pair(%s): WBTC <> WETH",
-            address(uniswapV2Pair_WBTC_WETH)
-        );
-        console.log("reserve WBTC: %s", reserve_WBTC_Pool2);
-        console.log("reserve WETH: %s", reserve_WETH_Pool2);
+        // console.log(
+        //     "uniswapV2Pair(%s): WBTC <> WETH",
+        //     address(uniswapV2Pair_WBTC_WETH)
+        // );
+        // console.log("reserve WBTC: %s", reserve_WBTC_Pool2);
+        // console.log("reserve WETH: %s", reserve_WETH_Pool2);
         console.log("USDC Balance: %s", USDC.balanceOf(address(this)));
         console.log("WETH Balance: %s", WETH.balanceOf(address(this)));
 
@@ -344,7 +344,7 @@ contract LiquidationOperator is IUniswapV2Callee {
             false
         );
         // uint collateral_WBTC = WBTC.balanceOf(address(this));
-        uint collateral_WETH = WETH.balanceOf(address(this));
+        // uint collateral_WETH = WETH.balanceOf(address(this));
         console.log("WETH Balance: %s", WETH.balanceOf(address(this)));
 
         // // 2.2 swap WBTC for other things or repay directly
